@@ -14,7 +14,7 @@ const SignUp = () => {
     password: ''
   });
 
-  const [errors, setErrors] = useState([]); // ✅ use array
+  const [errors, setErrors] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +54,7 @@ const SignUp = () => {
       <div className="form--centered">
         <h2>Sign Up</h2>
 
-        <ValidationErrors errors={errors} /> {/* ✅ shared component */}
+        <ValidationErrors errors={errors} /> {/* shared component */}
 
         <form onSubmit={handleSubmit}>
           <label htmlFor="firstName">First Name</label>

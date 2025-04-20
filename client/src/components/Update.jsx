@@ -17,7 +17,7 @@ const Update = () => {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [errors, setErrors] = useState([]); // ✅ for validation
+  const [errors, setErrors] = useState([]); // for validation
 
   useEffect(() => {
     fetch(`http://localhost:5000/api/courses/${id}`)
