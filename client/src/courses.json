@@ -1,0 +1,73 @@
+[
+    {
+      "title": "Introduction to Python Programming",
+      "description": "Learn the fundamentals of Python programming, including data types, control structures, and basic algorithms.",
+      "author": "John Doe",
+      "estimated_time": "5 hours",
+      "materials_needed": ["Laptop", "Python installed", "Text editor (e.g., VSCode)"]
+    },
+    {
+      "title": "Web Development with HTML and CSS",
+      "description": "A beginner's guide to building websites using HTML and CSS, covering layout, design, and responsive web design.",
+      "author": "Jane Smith",
+      "estimated_time": "8 hours",
+      "materials_needed": ["Laptop", "Text editor (e.g., Sublime Text)", "Web browser"]
+    },
+    {
+      "title": "Mastering JavaScript",
+      "description": "Deep dive into JavaScript, covering advanced topics like closures, promises, and asynchronous programming.",
+      "author": "Michael Johnson",
+      "estimated_time": "12 hours",
+      "materials_needed": ["Laptop", "JavaScript enabled browser", "Text editor"]
+    },
+    {
+      "title": "Introduction to Data Science with Python",
+      "description": "Learn data analysis and visualization using Python's data science libraries like Pandas, NumPy, and Matplotlib.",
+      "author": "Sara Lee",
+      "estimated_time": "10 hours",
+      "materials_needed": ["Laptop", "Python installed", "Jupyter Notebook"]
+    },
+    {
+      "title": "Building Mobile Apps with React Native",
+      "description": "Learn how to create cross-platform mobile apps using React Native, including navigation, UI components, and APIs.",
+      "author": "David Brown",
+      "estimated_time": "15 hours",
+      "materials_needed": ["Laptop", "React Native CLI installed", "Android Studio or Xcode"]
+    },
+    {
+      "title": "Machine Learning Basics",
+      "description": "Get started with machine learning by learning algorithms, data preprocessing, and model evaluation using Python.",
+      "author": "Emily Wilson",
+      "estimated_time": "20 hours",
+      "materials_needed": ["Laptop", "Python installed", "Jupyter Notebook"]
+    },
+    {
+      "title": "Advanced SQL Queries for Data Analysis",
+      "description": "Master SQL by learning advanced techniques for data extraction, analysis, and reporting in relational databases.",
+      "author": "Kevin Harris",
+      "estimated_time": "6 hours",
+      "materials_needed": ["Laptop", "SQL Database (e.g., MySQL or PostgreSQL)", "SQL editor"]
+    },
+    {
+      "title": "Digital Marketing 101",
+      "description": "Learn the basics of digital marketing, including SEO, social media marketing, content marketing, and email campaigns.",
+      "author": "Anna Green",
+      "estimated_time": "7 hours",
+      "materials_needed": ["Laptop", "Internet connection"]
+    },
+    {
+      "title": "Introduction to UX/UI Design",
+      "description": "Learn the principles of user experience and user interface design, focusing on creating intuitive and aesthetically pleasing designs.",
+      "author": "James Black",
+      "estimated_time": "9 hours",
+      "materials_needed": ["Laptop", "Design software (e.g., Figma or Adobe XD)"]
+    },
+    {
+      "title": "Photography for Beginners",
+      "description": "Understand the basics of photography, including composition, lighting, and camera settings to capture stunning images.",
+      "author": "Sophia White",
+      "estimated_time": "5 hours",
+      "materials_needed": ["Camera (DSLR or smartphone)", "Photo editing software (e.g., Lightroom)"]
+    }
+  ]
+  

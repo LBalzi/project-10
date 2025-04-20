@@ -1,25 +1,28 @@
 {
-  "name": "rest-api-auth-with-express",
+  "name": "techdegree-fullstackjs-rest-api",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon ./app.js",
+    "seed": "cross-env DB_ENABLE_LOGGING=true node './seed'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^5.9.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "nodemon": "^1.18.3",
+    "sequelize-cli": "^6.6.2"
   },
   "dependencies": {
     "basic-auth": "^2.0.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "express-validator": "^6.14.3",
-    "morgan": "^1.10.0"
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "promise.prototype.finally": "^3.1.2",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.0.0"
   }
 }
