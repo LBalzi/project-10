@@ -11,7 +11,7 @@ const SignOut = () => {
     navigate('/');
   }, [signOut, navigate]);
 
-  return null; // or a loading spinner / "Signing out..."
+  return null;
 };
 
 export default SignOut;

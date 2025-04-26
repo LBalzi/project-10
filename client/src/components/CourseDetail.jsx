@@ -12,17 +12,14 @@ const CourseDetail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log(`🔍 Fetching course ID: ${id}`);
     fetch(`http://localhost:5000/api/courses/${id}`)
       .then((res) => {
-        console.log('API response:', res);
         if (!res.ok) {
           throw new Error('Failed to fetch course');
         }
         return res.json();
       })
       .then((data) => {
-        console.log('Course data:', data);
         setCourse(data);
         setLoading(false);
       })
@@ -45,7 +42,6 @@ const CourseDetail = () => {
     const { emailAddress, password } = authenticatedUser;
 
     try {
-      console.log('🗑️ Sending DELETE request...');
       const res = await fetch(`http://localhost:5000/api/courses/${id}`, {
         method: 'DELETE',
         headers: {
@@ -53,10 +49,7 @@ const CourseDetail = () => {
         }
       });
 
-      console.log('🗑️ Delete response:', res);
-
       if (res.status === 204) {
-        console.log('Course deleted, redirecting...');
         navigate('/');
       } else if (res.status === 403) {
         alert('You are not authorized to delete this course.');
@@ -74,15 +67,20 @@ const CourseDetail = () => {
   if (!course) return <p>Course not found.</p>;
 
   const isOwner = authenticatedUser && authenticatedUser.id === course.userId;
-  console.log('Authenticated user:', authenticatedUser);
-  console.log('Course owner ID:', course.userId);
-  console.log('Is owner:', isOwner);
 
   return (
     <div className="wrap">
       <div className="main--flex">
         <div>
           <h2 className="course--name">{course.title}</h2>
+
+          {/* Show the course author */}
+          {course.User && (
+            <h3 className="course--author">
+              By {course.User.firstName} {course.User.lastName}
+            </h3>
+          )}
+
           <h3 className="course--detail--title">Course Description</h3>
           <p style={{ whiteSpace: 'pre-line' }}>
             {course.description || 'No description provided.'}

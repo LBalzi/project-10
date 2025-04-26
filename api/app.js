@@ -131,27 +131,27 @@ app.get('/api/courses', async (req, res) => {
   }
 });
 
-//GET a single course route
+// GET a single course by ID
 app.get('/api/courses/:id', async (req, res) => {
   try {
     const course = await Course.findByPk(req.params.id, {
       include: {
-        model: User, // Include the associated User
-        attributes: ["firstName", "lastName", "emailAddress"] // Select only these fields
+        model: User,
+        attributes: ['id', 'firstName', 'lastName', 'emailAddress'], // Include 'id' too (helps match ownership!)
       }
     });
-  if (!course) {
-    return res.status(404).json({
-      message: "Course was not found",
-    }) 
-  } else {
-    res.json(course);
-  }
-} catch (error) {
+
+    if (!course) {
+      return res.status(404).json({ message: 'Course not found' });
+    }
+
+    res.status(200).json(course);
+
+  } catch (error) {
     console.error('Error fetching course:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-  });
+});
 
 // POST route to add a new course
 app.post('/api/courses', authenticateUser, async (req, res) => {
