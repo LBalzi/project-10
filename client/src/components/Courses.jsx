@@ -27,7 +27,7 @@ function Courses() {
 
   return (
     <div>
-      <h1>Courses</h1>
+      <h1></h1>
       {loading && <p>Loading courses...</p>}
       {error && <p>{error}</p>}
       <ul className="main--grid">
@@ -42,16 +42,8 @@ function Courses() {
               fontFamily: "Raleway, sans-serif",
             }}
           >
-            <h2 className="course--title">{course.title}</h2>
-            <p className="course--label">{course.description}</p>
-            <p>
-              <strong>Author:</strong> {course.author}
-            </p>
-            <ul>
-              {course.materialsNeeded?.split("\n").map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
+            <h3>Course</h3>
+            <p className="course--title">{course.title}</p>
           </Link>
         ))}
   

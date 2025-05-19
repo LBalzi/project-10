@@ -17,7 +17,7 @@ const Update = () => {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [errors, setErrors] = useState([]); // for validation
+  const [errors, setErrors] = useState([]); // validation errors
 
   useEffect(() => {
     fetch(`http://localhost:5000/api/courses/${id}`)
@@ -28,6 +28,12 @@ const Update = () => {
         return response.json();
       })
       .then((data) => {
+        // Ownership check - if user is not the owner, redirect or block
+        if (authenticatedUser && authenticatedUser.id !== data.userId) {
+          navigate('/forbidden'); // Or another page to handle unauthorized access
+          return;
+        }
+
         setFormData({
           title: data.title || "",
           description: data.description || "",
@@ -41,7 +47,7 @@ const Update = () => {
         setError("Could not load course");
         setLoading(false);
       });
-  }, [id]);
+  }, [id, authenticatedUser, navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -76,6 +82,8 @@ const Update = () => {
       } else if (res.status === 400) {
         const data = await res.json();
         setErrors(data.errors || ['Validation failed']);
+      } else if (res.status === 403) {
+        alert('You are not authorized to update this course.');
       } else {
         throw new Error("Failed to update course");
       }
@@ -131,7 +139,7 @@ const Update = () => {
           />
 
           <button className="button" type="submit">Update Course</button>
-          <Link to="/" className="button button-secondary">Cancel</Link>
+          <Link to={`/courses/${id}`} className="button button-secondary">Cancel</Link>
         </form>
       </div>
     </div>

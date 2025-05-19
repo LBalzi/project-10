@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import ReactMarkdown from 'react-markdown';
 
 const CourseDetail = () => {
   const { id } = useParams();
@@ -74,7 +75,6 @@ const CourseDetail = () => {
         <div>
           <h2 className="course--name">{course.title}</h2>
 
-          {/* Show the course author */}
           {course.User && (
             <h3 className="course--author">
               By {course.User.firstName} {course.User.lastName}
@@ -82,9 +82,11 @@ const CourseDetail = () => {
           )}
 
           <h3 className="course--detail--title">Course Description</h3>
-          <p style={{ whiteSpace: 'pre-line' }}>
-            {course.description || 'No description provided.'}
-          </p>
+          {course.description ? (
+            <ReactMarkdown>{course.description}</ReactMarkdown>
+          ) : (
+            <p>No description provided.</p>
+          )}
         </div>
 
         <div>
@@ -93,11 +95,7 @@ const CourseDetail = () => {
 
           <h3 className="course--detail--title">Materials Needed</h3>
           {course.materialsNeeded ? (
-            <ul className="course--detail--list">
-              {course.materialsNeeded.split('\n').map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
+            <ReactMarkdown>{course.materialsNeeded}</ReactMarkdown>
           ) : (
             <p>No materials listed.</p>
           )}
