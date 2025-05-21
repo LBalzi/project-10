@@ -70,6 +70,18 @@ const CourseDetail = () => {
   const isOwner = authenticatedUser && authenticatedUser.id === course.userId;
 
   return (
+    <>
+    <div className='actions--bar'>
+      <div className="course--button-group">
+        {isOwner && (
+          <>
+            <Link to={`/courses/${id}/update`} className="button">Update Course</Link>
+            <button className="button" onClick={handleDelete}>Delete Course</button>
+          </>
+        )}
+        <Link to="/" className="button button-secondary">Return to List</Link>
+      </div>
+      </div>
     <div className="wrap">
       <div className="main--flex">
         <div>
@@ -101,17 +113,8 @@ const CourseDetail = () => {
           )}
         </div>
       </div>
-
-      <div className="course--button-group">
-        {isOwner && (
-          <>
-            <Link to={`/courses/${id}/update`} className="button">Update Course</Link>
-            <button className="button" onClick={handleDelete}>Delete Course</button>
-          </>
-        )}
-        <Link to="/" className="button button-secondary">Return to List</Link>
-      </div>
     </div>
+    </>
   );
 };
 

@@ -40,12 +40,17 @@ header {
     background: #57496e;
     color: #fff;
     padding: 1rem 0;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 .header--flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.course--button-group {
+    display: flex;
+    justify-content: space-between;
 }
 .header--logo {
     font-size: 1.25rem;
@@ -121,8 +126,15 @@ header nav a:hover {
 }
 .actions--bar {
     background: #e9e5f0;
-    padding: 1rem 0;
+    padding: 1rem;
     margin: 0 0 2rem;
+      width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
 }
 .validation--errors {
     background: #e9e5f0;
@@ -223,6 +235,7 @@ input:focus, button:focus, .button:focus, textarea:focus {
         grid-template-columns: 1fr 1fr;
         column-gap: 1.5rem;
         grid-auto-rows: 1fr;
+        margin-top: 2rem; 
     }
 }
 @media screen and (min-width: 800px) {
